@@ -1,0 +1,3 @@
+kubectl create secret generic pgpassword --from-literal PGPASSWORD=YOUR_PASSWORD
+kubectl apply -f current_folder
+kubectl delete -f current_folder

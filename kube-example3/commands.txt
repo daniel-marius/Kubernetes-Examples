@@ -1,0 +1,14 @@
+cd posts
+docker build -t daniel/posts:0.0.1 .
+
+cd infra/k8s
+kubectl apply -f posts.yaml
+kubectl get pods
+kubectl delete pod posts
+kubectl get deploments
+kubectl rollout restart deployment posts-depl
+kubectl get services
+kubectl describe service posts-srv
+
+minikube addons enable ingress
+edit /etc/hosts by adding 127.0.0.1 posts.com or minikube ip posts.com
